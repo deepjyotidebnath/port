@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deepjyoti Debnath - Portfolio</title>
+  <style>
+    :root {
+      --primary: #007bff;
+      --bg-light: #f8f9fa;
+      --bg-dark: #121212;
+      --text-light: #ffffff;
+      --text-dark: #333;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    h2 {
+      border-bottom: 2px solid var(--primary);
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+    }
+    ul {
+      list-style: disc inside;
+    }
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .button {
+      padding: 0.5rem 1rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 1rem;
+      margin-right: 0.5rem;
+    }
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+    .scroll-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: none;
+      background: var(--primary);
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="typewriter"></h1>
+    <p>West Bengal, India | 81162651512</p>
+    <div class="contact-links">
+      <a href="https://github.com/deepjyotidebnath" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/deepjyoti-debnath-844279316" target="_blank">LinkedIn</a>
+    </div>
+    <button class="button" onclick="toggleTheme()">Toggle Dark Mode</button>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>About Me</h2>
+      <p>With a strong programming foundation, I've explored ML, DL, and NLP. I'm eager to drive innovation, learn, and grow in AI and data science, leveraging my skills and passion.</p>
+    </section>
+
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <li><strong>Chatbot Developer @ Intellexa.AI</strong> (June 2024 - Dec 2024)</li>
+        <li><strong>AI Freelancer @ NEET Test Line</strong> (Dec 2025 - Feb 2025)</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li><strong>B.Tech in CSE</strong> – Coochbehar Govt. Engineering College (2023–2027)</li>
+        <li><strong>Higher Secondary</strong> – Kashibati Vidyapith (2020–2022) – 97.2%</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul>
+        <li>Machine Learning, Deep Learning, NLP, OpenCV</li>
+        <li>Python, Java, JavaScript, HTML, CSS, C, C++</li>
+        <li>SQL, MongoDB, DSA, DBMS</li>
+        <li>LangChain, Hugging Face, AWS, Git & GitHub</li>
+        <li>Problem Solving, Decision Making, Critical Thinking</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <ul>
+        <li>AI-Based Medical Diagnosis System and Conversational AI</li>
+        <li>Personal Portfolio, Spotify Clone</li>
+        <li>Object Detection, Image Classification, Speech Recognition</li>
+        <li>Q&A Chatbot with History, Recommendation System</li>
+        <li>YouTube Summarization, Math Solver using Gemma 2</li>
+      </ul>
+    </section>
+  </main>
+
+  <button id="scrollBtn" class="scroll-top" onclick="scrollToTop()">↑ Top</button>
+
+  <script>
+    // Dark Mode Toggle
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Scroll to Top
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Show Scroll to Top Button
+    window.onscroll = function () {
+      const scrollBtn = document.getElementById("scrollBtn");
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollBtn.style.display = "block";
+      } else {
+        scrollBtn.style.display = "none";
+      }
+    };
+
+    // Typewriter Effect for Name
+    const text = "Deepjyoti Debnath";
+    let i = 0;
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, 100);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
